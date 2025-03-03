@@ -25,5 +25,6 @@
     "eslint": "^9.21.0",
     "vue-tsc": "~2.1.6",
     "wrangler": "3.103.2"
-  }
+  },
+  "packageManager": "pnpm@10.5.2"
 }
