@@ -2,7 +2,7 @@
 
 ## Nuxt UI v3
 - ~~Add @nuxt/ui@next to project https://ui3.nuxt.dev/getting-started~~
-- Create a layout with the new UI components: header, footer, navbar, sidebar, main content area
+- ~~Create a layout with the new UI components: header, footer, navbar, sidebar, main content area~~
 - Create a theme with the new UI components: colors, typography, spacing, breakpoints
 - Create a landing page with the new UI components
 - Add social media icons to the footer/header
