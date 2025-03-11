@@ -1,6 +1,6 @@
 <template>
   <USeparator
-    icon="i-simple-icons-nuxtdotjs"
+    icon="i-lucide-bolt"
     class="h-px"
   />
 
@@ -15,7 +15,16 @@
       <UColorModeButton />
 
       <UButton
-        to="https://github.com/malhao/nuxt3-nuxt-ui-v3-nuxthub-starter"
+        to="https://www.linkedin.com/in/malhao"
+        target="_blank"
+        icon="i-simple-icons-linkedin"
+        aria-label="X"
+        color="neutral"
+        variant="ghost"
+      />
+
+      <UButton
+        to="https://github.com/malhao"
         target="_blank"
         icon="i-simple-icons-github"
         aria-label="GitHub"
@@ -25,3 +34,5 @@
     </template>
   </UFooter>
 </template>
+<script setup lang="ts">
+</script>

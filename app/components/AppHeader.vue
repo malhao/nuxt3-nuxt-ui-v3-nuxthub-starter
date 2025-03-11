@@ -31,6 +31,25 @@ const items = computed(() => [
 
     <template #right>
       <UColorModeButton />
+
+      <UButton
+        to="https://www.linkedin.com/in/malhao"
+        target="_blank"
+        icon="i-simple-icons-linkedin"
+        aria-label="X"
+        color="neutral"
+        variant="ghost"
+      />
+
+      <UButton
+        to="https://github.com/malhao"
+        target="_blank"
+        icon="i-simple-icons-github"
+        aria-label="GitHub"
+        color="neutral"
+        variant="ghost"
+      />
+
       <UButton
         label="Sign in"
         color="neutral"

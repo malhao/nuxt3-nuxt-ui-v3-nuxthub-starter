@@ -5,8 +5,8 @@
 - ~~Create a layout with the new UI components: header, footer, navbar, sidebar, main content area~~
 - ~~Create a theme with the new UI components: colors, typography, spacing, breakpoints~~
 - ~~Create a landing page with the new UI components~~
-- Add social media icons to the footer/header
-- Add a logo to the header
+- ~~Add social media icons to the footer/header~~
+- ~~Add a logo to the header~~
 
 ## Login with Github account to change the content of the page
 - Add a login button to the header
