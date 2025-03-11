@@ -1,46 +1,25 @@
-<template>
-  <main>
-    <UContainer>
-      <UCard class="mt-10">
-        <div class="flex flex-col items-center justify-center gap-4">
-          <h1 class="font-bold text-2xl text-(--ui-primary)">
-            Nuxt UI v3
-          </h1>
-
-          <div class="flex items-center gap-2">
-            <UButton
-              label="Documentation"
-              icon="i-lucide-square-play"
-              to="https://ui3.nuxt.dev/getting-started/installation/nuxt"
-              target="_blank"
-            />
-
-            <UButton
-              label="GitHub"
-              color="neutral"
-              variant="outline"
-              icon="i-simple-icons-github"
-              to="https://github.com/nuxt/ui"
-              target="_blank"
-            />
-          </div>
-        </div>
-      </UCard>
-
-      <UCard class="mt-10">
-        <ImageGallery />
-      </UCard>
-
-      <UCard class="mt-10">
-        <RedirectsPanel />
-      </UCard>
-
-      <UCard class="mt-10">
-        <MessagesPanel />
-      </UCard>
-    </UContainer>
-  </main>
-</template>
-
 <script setup lang="ts">
+const { data: page } = await useAsyncData('index', () => queryCollection('index').first())
+
+useSeoMeta({
+  titleTemplate: '',
+  title: page.value?.title,
+  ogTitle: page.value?.title,
+  description: page.value?.description,
+  ogDescription: page.value?.description
+})
 </script>
+
+<template>
+  <UPageHero
+    :title="page?.hero.title"
+    :description="page?.hero.description"
+    :links="page?.hero.links"
+  >
+    <template #top>
+      <div class="absolute rounded-full dark:bg-(--ui-primary) blur-[300px] size-60 sm:size-80 transform -translate-x-1/2 left-1/2 -translate-y-80" />
+
+      <StarsBg />
+    </template>
+  </UPageHero>
+</template>

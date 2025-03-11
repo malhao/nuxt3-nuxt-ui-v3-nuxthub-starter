@@ -1,0 +1,19 @@
+title: Alex Malhao
+description: Personal blog and portfolio of Alex Malhao
+navigation: false
+hero:
+  title: 404 - Boring Code Not Found
+  description: I'm a full-stack developer and software architect who crafts scalable, production-ready solutions in the modern JavaScript ecosystem—occasionally fueled by caffeine and stubborn optimism. Fluent in front-end sorcery with Vue.js and Nuxt.js, and back-end wizardry using Node.js, I regularly charm cloud services and headless CMS frameworks into submission. I believe great code should run smoothly — there's always coffee and console logs.
+  links:
+    - label: Blog
+      icon: i-lucide-arrow-right
+      trailing: true
+      to: /blog
+      size: xl
+    - label: My GitHub account
+      icon: i-simple-icons-github
+      size: xl
+      color: neutral
+      variant: subtle
+      to: https://github.com/malhao/
+      target: _blank

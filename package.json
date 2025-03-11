@@ -15,6 +15,7 @@
   "dependencies": {
     "@iconify-json/lucide": "^1.2.28",
     "@iconify-json/simple-icons": "^1.2.27",
+    "@nuxt/content": "^3.3.0",
     "@nuxt/ui-pro": "3.0.0-beta.3",
     "@nuxthub/core": "^0.8.18",
     "nuxt": "^3.16.0"
@@ -25,5 +26,10 @@
     "eslint": "^9.22.0",
     "wrangler": "3.114.0"
   },
-  "packageManager": "pnpm@10.5.2"
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "better-sqlite3"
+    ]
+  },
+  "packageManager": "pnpm@10.6.1"
 }

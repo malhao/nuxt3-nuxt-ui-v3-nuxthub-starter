@@ -1,10 +1,18 @@
 <script setup lang="ts">
-const route = useRoute()
-
-const items = computed(() => [{
-  label: 'Blog',
-  to: '/blog'
-}])
+const items = computed(() => [
+  {
+    label: 'Blog',
+    to: '/blog'
+  },
+  {
+    label: 'About',
+    to: '/about'
+  },
+  {
+    label: 'Contact',
+    to: '/contact'
+  }
+])
 
 </script>
 
