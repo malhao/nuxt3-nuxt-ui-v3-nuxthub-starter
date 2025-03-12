@@ -7,7 +7,7 @@ useSeoMeta({
 
 <template>
   <UApp>
-    <NuxtLoadingIndicator />
+    <NuxtLoadingIndicator color="repeating-linear-gradient(to right, #ff7e29 0%, #ff9a3b 50%, #ffb64d 100%)" />
 
     <NuxtLayout>
       <NuxtPage />

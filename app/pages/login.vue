@@ -2,6 +2,14 @@
 import * as z from 'zod'
 import type { FormSubmitEvent } from '@nuxt/ui'
 
+definePageMeta({
+  layout: 'auth'
+})
+
+useSeoMeta({
+  title: 'Login'
+})
+
 const toast = useToast()
 
 const fields = [{
@@ -48,18 +56,26 @@ function onSubmit(payload: FormSubmitEvent<Schema>) {
 </script>
 
 <template>
-  <div class="flex flex-col items-center justify-center gap-4 p-4">
-    <UPageCard class="w-full max-w-md">
-      <UAuthForm
-        :schema="schema"
-        title="Login"
-        description="Enter your credentials to access your account."
-        icon="i-lucide-user"
-        :fields="fields"
-        :providers="providers"
-        @submit="onSubmit"
-      />
-    </UPageCard>
-  </div>
-</template>
+  <UAuthForm
+    :fields="fields"
+    :schema="schema"
+    :providers="providers"
+    title="Welcome back"
+    icon="i-lucide-lock"
+    @submit="onSubmit"
+  >
+    <template #password-hint>
+      <ULink
+        to="/"
+        class="text-primary-500 font-medium"
+      >Forgot password?</ULink>
+    </template>
 
+    <template #footer>
+      By signing in, you agree to our <ULink
+      to="/"
+      class="text-primary-500 font-medium"
+    >Terms of Service</ULink>.
+    </template>
+  </UAuthForm>
+</template>

@@ -9,8 +9,8 @@
 - ~~Add a logo to the header~~
 
 ## Login with Github account to change the content of the page
-- Add a login button to the header
-- Add a login page with the Github OAuth flow
+- ~~Add a login button to the header~~
+- ~~Add a login page with the Github OAuth flow~~
 - Add a logout button to the header
 - Allow changes to the content of the page only when logged in
 - Allow changes to the content of the page only when the user is the owner of the content
