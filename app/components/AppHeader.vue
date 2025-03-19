@@ -1,6 +1,10 @@
 <script setup lang="ts">
 const items = computed(() => [
   {
+    label: 'Home',
+    to: '/'
+  },
+  {
     label: 'Blog',
     to: '/blog'
   },
@@ -11,6 +15,10 @@ const items = computed(() => [
   {
     label: 'Contact',
     to: '/contact'
+  },
+  {
+    label: 'Images',
+    to: '/images'
   }
 ])
 

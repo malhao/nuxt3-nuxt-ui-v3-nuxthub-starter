@@ -28,10 +28,6 @@
       </UCard>
 
       <UCard class="mt-10">
-        <ImageGallery />
-      </UCard>
-
-      <UCard class="mt-10">
         <RedirectsPanel />
       </UCard>
 

@@ -84,5 +84,13 @@ export const collections = {
         links: z.array(linkSchema)
       })
     })
+  }),
+  images: defineCollection({
+    source: '4.images.yml',
+    type: 'data',
+    schema: z.object({
+      title: z.string().nonempty(),
+      description: z.string().nonempty()
+    })
   })
 }

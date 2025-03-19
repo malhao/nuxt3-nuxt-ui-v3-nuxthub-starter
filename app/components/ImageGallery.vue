@@ -65,10 +65,6 @@ async function deleteImage(pathname: string) {
 
 <template>
   <div class="space-y-6">
-    <h3 class="text-lg font-semibold">
-      Images
-    </h3>
-
     <UForm
       :schema="schema"
       :state="state"
