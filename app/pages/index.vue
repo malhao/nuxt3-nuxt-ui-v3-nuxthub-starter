@@ -46,13 +46,15 @@ useSeoMeta({
         <UIcon name="i-simple-icons-javascript" class="size-10 shrink-0" />
         <UIcon name="i-simple-icons-vuedotjs" class="size-10 shrink-0" />
         <UIcon name="i-simple-icons-nuxt" class="size-10 shrink-0" />
-        <UIcon name="i-simple-icons-tailwindcss" class="size-10 shrink-0" />
         <UIcon name="i-simple-icons-vuetify" class="size-10 shrink-0" />
+        <UIcon name="i-simple-icons-tailwindcss" class="size-10 shrink-0" />
         <UIcon name="i-simple-icons-nodedotjs" class="size-10 shrink-0" />
         <UIcon name="i-simple-icons-postgresql" class="size-10 shrink-0" />
         <UIcon name="i-simple-icons-mongodb" class="size-10 shrink-0" />
         <UIcon name="i-simple-icons-docker" class="size-10 shrink-0" />
         <UIcon name="i-mdi-microsoft-azure" class="size-10 shrink-0" />
+        <UIcon name="i-simple-icons-strapi" class="size-10 shrink-0" />
+        <UIcon name="i-simple-icons-puppeteer" class="size-10 shrink-0" />
       </UPageMarquee>
     </UPageSection>
   </div>
