@@ -79,7 +79,7 @@ const items = computed(() => [
             label="Sign in"
             color="neutral"
             variant="ghost"
-            @click="openInPopup('/api/auth/github')"
+            to="/login"
           />
         </template>
         <template #placeholder>
