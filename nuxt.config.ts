@@ -10,7 +10,8 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@nuxthub/core',
     '@nuxt/eslint',
-    '@nuxt/ui-pro'
+    '@nuxt/ui-pro',
+    'nuxt-auth-utils',
   ],
   css: ['~/assets/css/main.css'],
   hub: {
@@ -27,6 +28,14 @@ export default defineNuxtConfig({
   },
   uiPro: {
     license: process.env.NUXT_UI_PRO_LICENSE
+  },
+  runtimeConfig: {
+    oauth: {
+      github: {
+        clientId: process.env.GITHUB_CLIENT_ID,
+        clientSecret: process.env.GITHUB_CLIENT_SECRET
+      }
+    }
   },
   // Development
   devtools: { enabled: true },

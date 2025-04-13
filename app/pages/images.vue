@@ -1,6 +1,12 @@
 <script setup lang="ts">
 const { data: page } = await useAsyncData('images', () => queryCollection('images').first())
 
+definePageMeta({
+  middleware: [
+    'auth'
+  ]
+})
+
 useSeoMeta({
   titleTemplate: '',
   title: page.value?.title,
@@ -8,6 +14,7 @@ useSeoMeta({
   description: page.value?.description,
   ogDescription: page.value?.description
 })
+
 </script>
 
 <template>

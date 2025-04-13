@@ -9,11 +9,6 @@
       class="absolute left-8 top-8 rounded-full"
     />
 
-    <UPageCard
-      variant="subtle"
-      class="max-w-sm w-full"
-    >
-      <slot />
-    </UPageCard>
+    <slot />
   </div>
 </template>

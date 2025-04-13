@@ -1,4 +1,7 @@
 <script setup lang="ts">
+const { openInPopup, loggedIn } = useUserSession()
+const { signOut } = useAuth()
+
 const items = computed(() => [
   {
     label: 'Home',
@@ -16,12 +19,8 @@ const items = computed(() => [
     label: 'Contact',
     to: '/contact'
   },
-  {
-    label: 'Images',
-    to: '/images'
-  }
+  ...(loggedIn.value ? [{ label: 'Images', to: '/images' }] : [])
 ])
-
 </script>
 
 <template>
@@ -58,12 +57,40 @@ const items = computed(() => [
         variant="ghost"
       />
 
-      <UButton
-        label="Sign in"
-        color="neutral"
-        variant="ghost"
-        to="/login"
-      />
+      <!-- Replace the Sign in button with AuthState component -->
+      <AuthState>
+        <template #default="{ loggedIn, user, clear }">
+          <div v-if="loggedIn" class="flex items-center gap-2">
+            <UDropdownMenu :items="[
+              { label: 'Profile', icon: 'i-lucide-user' },
+              { label: 'Settings', icon: 'i-lucide-settings' },
+              { label: 'Sign out', icon: 'i-lucide-log-out', onSelect: signOut }
+            ]">
+              <UAvatar
+                :src="user?.avatar_url"
+                :alt="user?.name || user?.login || 'User'"
+                size="sm"
+                class="cursor-pointer hover:opacity-80"
+              />
+            </UDropdownMenu>
+          </div>
+          <UButton
+            v-else
+            label="Sign in"
+            color="neutral"
+            variant="ghost"
+            @click="openInPopup('/api/auth/github')"
+          />
+        </template>
+        <template #placeholder>
+          <UButton
+            label="Sign in"
+            color="neutral"
+            variant="ghost"
+            disabled
+          />
+        </template>
+      </AuthState>
     </template>
 
     <template #body>
@@ -75,14 +102,52 @@ const items = computed(() => [
 
       <USeparator class="my-6" />
 
-      <UButton
-        label="Sign in"
-        color="neutral"
-        variant="subtle"
-        to="/login"
-        block
-        class="mb-3"
-      />
+      <!-- Replace the Sign in button with AuthState component in mobile view -->
+      <AuthState>
+        <template #default="{ loggedIn, user }">
+          <div v-if="loggedIn" class="flex flex-col gap-3">
+            <div class="flex items-center gap-3 px-2">
+              <UAvatar
+                :src="user?.avatar_url"
+                :alt="user?.name || user?.login || 'User'"
+                size="sm"
+              />
+              <div class="text-sm">
+                <div class="font-medium">{{ user?.name || user?.login || 'User' }}</div>
+                <div class="text-gray-500 dark:text-gray-400 text-xs" v-if="user?.email">
+                  {{ user.email }}
+                </div>
+              </div>
+            </div>
+            <UButton
+              label="Sign out"
+              color="neutral"
+              variant="subtle"
+              block
+              @click="signOut"
+            />
+          </div>
+          <UButton
+            v-else
+            label="Sign in"
+            color="neutral"
+            variant="subtle"
+            to="/login"
+            block
+            class="mb-3"
+          />
+        </template>
+        <template #placeholder>
+          <UButton
+            label="Loading..."
+            color="neutral"
+            variant="subtle"
+            disabled
+            block
+            class="mb-3"
+          />
+        </template>
+      </AuthState>
     </template>
   </UHeader>
 </template>
