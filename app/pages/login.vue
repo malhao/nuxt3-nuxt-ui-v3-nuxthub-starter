@@ -1,12 +1,13 @@
 <script setup lang="ts">
 const { signInWithGitHub } = useAuth()
+const { data: page } = await useAsyncData('login', () => queryCollection('login').first())
 
 definePageMeta({
   layout: 'auth'
 })
 
 useSeoMeta({
-  title: 'Login'
+  title: page.value?.title
 })
 
 const providers = [{
@@ -24,7 +25,7 @@ const providers = [{
     >
       <UAuthForm
         :providers="providers"
-        title="Sign in with"
+        :title="page.title"
         icon="i-lucide-lock"
       />
       <TermsOfServiceModal />

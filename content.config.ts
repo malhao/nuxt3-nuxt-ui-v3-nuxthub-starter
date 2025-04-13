@@ -85,6 +85,13 @@ export const collections = {
       })
     })
   }),
+  login: defineCollection({
+    source: '1.login.yml',
+    type: 'data',
+    schema: z.object({
+      title: z.string().nonempty()
+    })
+  }),
   images: defineCollection({
     source: '4.images.yml',
     type: 'data',
