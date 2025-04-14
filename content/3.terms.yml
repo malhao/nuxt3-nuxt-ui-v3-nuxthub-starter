@@ -1,0 +1,32 @@
+title: Terms of Service
+lastUpdated: Last updated on 13/04/2025
+agreementText: By signing in, you agree to our
+agreementLinkText: Terms of Service
+introduction: Welcome to Malhao.net! By accessing and using our website and choosing to log in using GitHub's OAuth, you agree to the following terms and conditions. Please review them carefully.
+sections:
+  - title: OAuth Login & Authorization
+    items:
+      - By logging in with GitHub's OAuth, you grant Malhao.net permission to access your GitHub public profile information (such as your username, profile picture, and any public email address).
+      - This information is used solely for account identification and to enhance your experience on our platform.
+  - title: Use of Your Information
+    items:
+      - The GitHub profile information obtained during login will be used only to display your details on your homepage—for example, alongside your comments on blog posts.
+      - Malhao.net will not share, sell, or distribute your GitHub information to any third parties beyond what is necessary to support and personalize your experience on the website.
+  - title: Privacy and Data Security
+    items:
+      - Your privacy is important to us. All data received from GitHub is stored securely and is accessible only by authorized personnel at Malhao.net.
+      - We do not collect any additional personal data without your explicit consent.
+  - title: User Responsibilities
+    items:
+      - You are responsible for the accuracy of the information provided by your GitHub profile.
+      - You agree to promptly notify us of any unauthorized use of your account or any other breach of security.
+  - title: Modifications to These Terms
+    items:
+      - Malhao.net reserves the right to update these Terms of Service at any time. Any changes will be effective immediately upon posting on our website.
+      - Your continued use of Malhao.net after any modifications are posted constitutes your acceptance of the revised terms.
+  - title: Acceptance
+    items:
+      - By logging in via GitHub OAuth and using Malhao.net, you acknowledge that you have read, understood, and agree to these Terms of Service.
+  - title: Contact Information
+    items:
+      - "If you have any questions or concerns about these Terms, please contact us at: alex@malhao.net"

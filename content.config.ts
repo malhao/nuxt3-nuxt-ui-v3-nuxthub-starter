@@ -117,6 +117,23 @@ export const collections = {
       })
     })
   }),
+  terms: defineCollection({
+    source: '3.terms.yml',
+    type: 'data',
+    schema: z.object({
+      title: z.string().nonempty(),
+      lastUpdated: z.string().nonempty(),
+      agreementText: z.string().nonempty(),
+      agreementLinkText: z.string().nonempty(),
+      introduction: z.string().nonempty(),
+      sections: z.array(
+        z.object({
+          title: z.string().nonempty(),
+          items: z.array(z.string().nonempty())
+        })
+      )
+    })
+  }),
   images: defineCollection({
     source: '4.images.yml',
     type: 'data',
