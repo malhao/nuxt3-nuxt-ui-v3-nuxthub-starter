@@ -1,0 +1,11 @@
+title: Authentication
+success:
+  title: Authentication Successful
+  description: You can close this window now.
+  icon: i-lucide-check-circle
+  color: success
+failure:
+  title: Authentication Failed
+  description: Please try signing in again.
+  icon: i-lucide-x-circle
+  color: error

@@ -98,6 +98,25 @@ export const collections = {
       )
     })
   }),
+  login_result: defineCollection({
+    source: '2.login-result.yml',
+    type: 'data',
+    schema: z.object({
+      title: z.string().nonempty(),
+      success: z.object({
+        title: z.string().nonempty(),
+        description: z.string().nonempty(),
+        icon: z.string().nonempty(),
+        color: colorEnum
+      }),
+      failure: z.object({
+        title: z.string().nonempty(),
+        description: z.string().nonempty(),
+        icon: z.string().nonempty(),
+        color: colorEnum
+      })
+    })
+  }),
   images: defineCollection({
     source: '4.images.yml',
     type: 'data',
