@@ -89,7 +89,13 @@ export const collections = {
     source: '1.login.yml',
     type: 'data',
     schema: z.object({
-      title: z.string().nonempty()
+      title: z.string().nonempty(),
+      providers: z.array(
+        z.object({
+          label: z.string().nonempty(),
+          icon: z.string().nonempty()
+        })
+      )
     })
   }),
   images: defineCollection({

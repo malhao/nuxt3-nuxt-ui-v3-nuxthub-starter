@@ -1,1 +1,4 @@
 title: Sign in
+providers:
+  - label: Github
+    icon: i-simple-icons-github

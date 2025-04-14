@@ -10,11 +10,11 @@ useSeoMeta({
   title: page.value?.title
 })
 
-const providers = [{
-  label: 'GitHub',
-  icon: 'i-simple-icons-github',
+const providers = page.value?.providers?.map(provider => ({
+  label: provider.label,
+  icon: provider.icon,
   onClick: signInWithGitHub
-}]
+})) || []
 </script>
 
 <template>
