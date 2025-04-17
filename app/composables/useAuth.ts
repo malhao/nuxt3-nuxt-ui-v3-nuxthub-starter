@@ -21,8 +21,6 @@ export const useAuth = () => {
   const signOut = async () => {
     await clear()
 
-    console.log('loggedIn', loggedIn)
-
     if (!loggedIn.value) {
       await router.push('/')
     }

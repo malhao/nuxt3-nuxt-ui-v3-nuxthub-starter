@@ -1,6 +1,6 @@
 <script setup lang="ts">
-const { openInPopup, loggedIn } = useUserSession()
 const { signOut } = useAuth()
+const { isAdmin } = useAdmin()
 
 const items = computed(() => [
   {
@@ -19,7 +19,7 @@ const items = computed(() => [
     label: 'Contact',
     to: '/contact'
   },
-  ...(loggedIn.value ? [{ label: 'Images', to: '/images' }] : [])
+  ...(isAdmin.value ? [{ label: 'Images', to: '/images' }] : [])
 ])
 </script>
 

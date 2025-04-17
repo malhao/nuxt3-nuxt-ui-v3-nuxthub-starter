@@ -3,7 +3,7 @@ const { data: page } = await useAsyncData('images', () => queryCollection('image
 
 definePageMeta({
   middleware: [
-    'auth'
+    'admin'
   ]
 })
 

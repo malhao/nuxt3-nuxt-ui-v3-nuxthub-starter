@@ -18,17 +18,15 @@ const providers = page.value?.providers?.map(provider => ({
 </script>
 
 <template>
-  <div>
-    <UPageCard
-      variant="subtle"
-      class="max-w-sm w-full"
-    >
-      <UAuthForm
-        :providers="providers"
-        :title="page.title"
-        icon="i-lucide-lock"
-      />
-      <TermsOfServiceModal />
-    </UPageCard>
-  </div>
+  <UPageCard
+    variant="subtle"
+    class="max-w-sm w-full"
+  >
+    <UAuthForm
+      :providers="providers"
+      :title="page.title"
+      icon="i-lucide-lock"
+    />
+    <TermsOfServiceModal />
+  </UPageCard>
 </template>
