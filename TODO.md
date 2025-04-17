@@ -13,7 +13,7 @@
 - ~~Add a login page with the Github OAuth flow~~
 - ~~Add a logout button to the header~~
 - ~~Allow changes to the content of the page only when logged in - Authentication~~
-- Allow changes to the content of the page only when the user is the owner of the content - Authorization
+- ~~Allow changes to the content of the page only when the user is the owner of the content - Authorization~~
 - Create a user profile page with the user's information
 - Create a edit page content page with a form to change the content of the page
   - This should include adding, updating and deleting text, images and videos

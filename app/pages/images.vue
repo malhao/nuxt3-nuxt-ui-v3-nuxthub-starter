@@ -2,9 +2,7 @@
 const { data: page } = await useAsyncData('images', () => queryCollection('images').first())
 
 definePageMeta({
-  middleware: [
-    'admin'
-  ]
+  middleware: ['admin']
 })
 
 useSeoMeta({

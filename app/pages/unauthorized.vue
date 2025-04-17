@@ -1,9 +1,7 @@
 <!-- pages/unauthorized.vue -->
 <script setup lang="ts">
-const route = useRoute()
-
 definePageMeta({
-  layout: 'auth'
+  layout: 'minimal'
 })
 
 // const fromPath = route.query.from || '/'

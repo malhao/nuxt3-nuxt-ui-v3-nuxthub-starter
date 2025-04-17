@@ -3,7 +3,7 @@ const { loggedIn } = useUserSession()
 const { data: page } = await useAsyncData('login-result', () => queryCollection('login_result').first())
 
 definePageMeta({
-  layout: 'auth'
+  layout: 'minimal'
 })
 
 useSeoMeta({

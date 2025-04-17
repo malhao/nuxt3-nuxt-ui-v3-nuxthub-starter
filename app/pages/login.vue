@@ -3,7 +3,7 @@ const { signInWithGitHub } = useAuth()
 const { data: page } = await useAsyncData('login', () => queryCollection('login').first())
 
 definePageMeta({
-  layout: 'auth'
+  layout: 'minimal'
 })
 
 useSeoMeta({
