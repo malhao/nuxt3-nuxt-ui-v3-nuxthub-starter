@@ -1,34 +1,39 @@
-// server/utils/admins.ts
-import { useStorage } from '#imports'
+import { hubDatabase } from '#imports'
 
-const getAdminList = async (): Promise<string[]> => {
-  try {
-    return await useStorage().getItem<string[]>('admins') || []
-  } catch (error) {
-    console.error('Error fetching admin list:', error)
-    return []
-  }
-}
-
-const setAdminList = async (list: string[]): Promise<void> => {
-  await useStorage().setItem('admins', list)
+const setupAdminTable = async () => {
+  const db = hubDatabase()
+  await db.exec('CREATE TABLE IF NOT EXISTS admins (username TEXT PRIMARY KEY, added_at INTEGER)')
 }
 
 export async function isAdmin(username: string): Promise<boolean> {
-  const adminList = await getAdminList()
-  return adminList.includes(username)
+  const db = hubDatabase()
+  await setupAdminTable()
+
+  const result = await db
+    .prepare('SELECT COUNT(*) as count FROM admins WHERE username = ?1')
+    .bind(username)
+    .first<{ count: number }>()
+
+  return result?.count > 0
 }
 
 export async function addAdmin(username: string): Promise<void> {
-  const adminList = await getAdminList()
-  if (!adminList.includes(username)) {
-    adminList.push(username)
-    await setAdminList(adminList)
-  }
+  const db = hubDatabase()
+  await setupAdminTable()
+
+  // Using INSERT OR IGNORE to prevent duplicates
+  await db
+    .prepare('INSERT OR IGNORE INTO admins (username, added_at) VALUES (?1, ?2)')
+    .bind(username, Date.now())
+    .run()
 }
 
 export async function removeAdmin(username: string): Promise<void> {
-  let adminList = await getAdminList()
-  adminList = adminList.filter(admin => admin !== username)
-  await setAdminList(adminList)
+  const db = hubDatabase()
+  await setupAdminTable()
+
+  await db
+    .prepare('DELETE FROM admins WHERE username = ?1')
+    .bind(username)
+    .run()
 }
