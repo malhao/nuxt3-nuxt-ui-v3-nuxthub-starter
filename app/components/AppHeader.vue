@@ -37,34 +37,14 @@ const items = computed(() => [
     />
 
     <template #right>
-      <UColorModeButton />
-
-      <UButton
-        to="https://www.linkedin.com/in/malhao"
-        target="_blank"
-        icon="i-simple-icons-linkedin"
-        aria-label="X"
-        color="neutral"
-        variant="ghost"
-      />
-
-      <UButton
-        to="https://github.com/malhao"
-        target="_blank"
-        icon="i-simple-icons-github"
-        aria-label="GitHub"
-        color="neutral"
-        variant="ghost"
-      />
-
       <!-- Replace the Sign in button with AuthState component -->
       <AuthState>
         <template #default="{ loggedIn, user, clear }">
           <div v-if="loggedIn" class="flex items-center gap-2">
             <UDropdownMenu :items="[
-              { label: 'Profile', icon: 'i-lucide-user' },
-              { label: 'Settings', icon: 'i-lucide-settings' },
-              { label: 'Sign out', icon: 'i-lucide-log-out', onSelect: signOut }
+              { label: 'Profile', icon: 'i-lucide-user', key: 'profile', to: '/profile' },
+              { label: 'Settings', icon: 'i-lucide-settings', key: 'settings' },
+              { label: 'Sign out', icon: 'i-lucide-log-out', key: 'sign-out', onSelect: signOut }
             ]">
               <UAvatar
                 :src="user?.avatar_url"
@@ -102,7 +82,6 @@ const items = computed(() => [
 
       <USeparator class="my-6" />
 
-      <!-- Replace the Sign in button with AuthState component in mobile view -->
       <AuthState>
         <template #default="{ loggedIn, user }">
           <div v-if="loggedIn" class="flex flex-col gap-3">
