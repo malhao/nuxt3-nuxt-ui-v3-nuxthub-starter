@@ -10,16 +10,7 @@ const items = computed(() => [
   {
     label: 'Blog',
     to: '/blog'
-  },
-  {
-    label: 'About',
-    to: '/about'
-  },
-  {
-    label: 'Contact',
-    to: '/contact'
-  },
-  ...(isAdmin.value ? [{ label: 'Images', to: '/images' }] : [])
+  }
 ])
 </script>
 
@@ -39,13 +30,14 @@ const items = computed(() => [
     <template #right>
       <!-- Replace the Sign in button with AuthState component -->
       <AuthState>
-        <template #default="{ loggedIn, user, clear }">
+        <template #default="{ loggedIn, user }">
           <div v-if="loggedIn" class="flex items-center gap-2">
-            <UDropdownMenu :items="[
-              { label: 'Profile', icon: 'i-lucide-user', key: 'profile', to: '/profile' },
-              { label: 'Settings', icon: 'i-lucide-settings', key: 'settings' },
-              { label: 'Sign out', icon: 'i-lucide-log-out', key: 'sign-out', onSelect: signOut }
-            ]">
+            <UDropdownMenu
+              :items="[
+                ...(isAdmin ? [{ label: 'Images', icon: 'i-lucide-images', key: 'images', to: '/images' }] : []),
+                { label: 'Sign out', icon: 'i-lucide-log-out', key: 'sign-out', onSelect: signOut }
+              ]"
+            >
               <UAvatar
                 :src="user?.avatar_url"
                 :alt="user?.name || user?.login || 'User'"
@@ -93,7 +85,7 @@ const items = computed(() => [
               />
               <div class="text-sm">
                 <div class="font-medium">{{ user?.name || user?.login || 'User' }}</div>
-                <div class="text-gray-500 dark:text-gray-400 text-xs" v-if="user?.email">
+                <div v-if="user?.email" class="text-gray-500 dark:text-gray-400 text-xs">
                   {{ user.email }}
                 </div>
               </div>

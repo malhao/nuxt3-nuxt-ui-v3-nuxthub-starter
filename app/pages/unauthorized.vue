@@ -4,7 +4,6 @@ definePageMeta({
   layout: 'minimal'
 })
 
-// const fromPath = route.query.from || '/'
 </script>
 
 <template>
