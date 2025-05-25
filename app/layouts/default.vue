@@ -1,6 +1,6 @@
 <template>
   <div>
-    <AppHeader />
+    <AppHeader :links="navLinks"/>
 
     <UMain>
       <slot />

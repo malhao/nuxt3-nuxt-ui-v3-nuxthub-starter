@@ -13,26 +13,26 @@
     "typecheck": "nuxt typecheck"
   },
   "dependencies": {
-    "@iconify-json/lucide": "^1.2.35",
+    "@iconify-json/lucide": "^1.2.44",
     "@iconify-json/mdi": "^1.2.3",
-    "@iconify-json/simple-icons": "^1.2.31",
-    "@nuxt/content": "^3.4.0",
-    "@nuxt/ui-pro": "3.0.2",
-    "@nuxthub/core": "^0.8.24",
-    "nuxt": "^3.16.2",
-    "nuxt-auth-utils": "0.5.19"
+    "@iconify-json/simple-icons": "^1.2.35",
+    "@nuxt/content": "^3.5.1",
+    "@nuxt/ui-pro": "3.1.2",
+    "@nuxthub/core": "^0.8.27",
+    "nuxt": "^3.17.4",
+    "nuxt-auth-utils": "0.5.20"
   },
   "devDependencies": {
     "@nuxt/eslint": "^0.7.6",
     "@nuxt/eslint-config": "^0.7.6",
-    "@types/node": "^22.14.1",
-    "eslint": "^9.24.0",
-    "wrangler": "3.114.5"
+    "@types/node": "^22.15.21",
+    "eslint": "^9.27.0",
+    "wrangler": "3.114.9"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
       "better-sqlite3"
     ]
   },
-  "packageManager": "pnpm@10.6.1"
+  "packageManager": "pnpm@10.11.0"
 }
